@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crescimento do E-commerce no Brasil</title>
+  <style>
+    :root {
+      --primary-color: #6459E6;
+      --secondary-color: #29DFC4;
+      --dark-color: #222;
+      --light-color: #f9f9f9;
+      --text-color: #333;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-color);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #4834d4);
+      color: white;
+      padding: 1.5rem 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover, nav a:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .image-container {
+      width: 100%;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.03);
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      border: none;
+      background: var(--secondary-color);
+      color: var(--dark-color);
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover, button:focus {
+      background: #1fc9ad;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    button:focus {
+      outline: 3px solid #88A0ED;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary-color), #4834d4);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-description {
+      font-size: 1rem;
+    }
+
+    footer {
+      background: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        gap: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="header-content">
+      <h1 id="titulo-site">O Crescimento do E-commerce no Brasil</h1>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="https://www.ecommercebrasil.com.br/" target="_blank">E-commerce Brasil</a></li>
+          <li><a href="https://www.sebrae.com.br/sites/PortalSebrae/artigos/o-crescimento-do-e-commerce-no-brasil" target="_blank">Sebrae</a></li>
+          <li><a href="https://blog.nuvemshop.com.br/artigos/ecommerce-no-brasil" target="_blank">Nuvemshop</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+    <section aria-labelledby="secao-introducao">
+      <h2 id="secao-introducao">Introdução</h2>
+      <p>
+        O e-commerce no Brasil vem crescendo de forma acelerada, impulsionado pela transformação digital,
+        mudanças nos hábitos de consumo e pelo avanço dos meios de pagamento online.
+      </p>
+      <p>
+        Com a pandemia de COVID-19, esse crescimento se intensificou, acelerando em poucos anos uma transformação
+        que poderia ter levado uma década. Hoje, o comércio eletrônico representa uma parcela significativa
+        do varejo brasileiro.
+      </p>
+    </section>
+
+    <section aria-labelledby="secao-dados">
+      <h2 id="secao-dados">Dados de Crescimento</h2>
+      <p>
+        Segundo relatórios recentes, o comércio eletrônico brasileiro ultrapassou a marca de
+        <strong>R$ 185 bilhões em faturamento em 2023</strong>, consolidando-se como um dos mercados mais promissores da América Latina.
+      </p>
+      
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number">27%</div>
+          <div class="stat-description">Crescimento em relação a 2022</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">75%</div>
+          <div class="stat-description">Aumento de usuários desde 2019</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3º</div>
+          <div class="stat-description">Maior mercado da América Latina</div>
+        </div>
+      </div>
+      
+      <button id="botao-info" aria-expanded="false" aria-controls="texto-extra">
+        Ver mais informações
+      </button>
+      <div id="texto-extra" hidden class="fade-in">
+        <p>
+          O setor apresentou um aumento de 27% em relação ao ano anterior, com destaque para categorias como eletrônicos,
+          moda e alimentação.
+        </p>
+        <p>
+          Além disso, observou-se um crescimento significativo no número de pequenos e médios empreendedores
+          aderindo ao e-commerce como principal canal de vendas.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="secao-fatores">
+      <h2 id="secao-fatores">Fatores de Crescimento</h2>
+      <p>Diversos fatores contribuíram para o crescimento acelerado do e-commerce no Brasil:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+        <li style="margin-bottom: 0.5rem;">Aumento da penetração de smartphones e internet móvel</li>
+        <li style="margin-bottom: 0.5rem;">Diversificação de meios de pagamento (PIX, cartões, boletos)</li>
+        <li style="margin-bottom: 0.5rem;">Melhoria na logística e entrega rápida</li>
+        <li style="margin-bottom: 0.5rem;">Confiança do consumidor em compras online</li>
+        <li style="margin-bottom: 0.5rem;">Expansão do marketplace como modelo de negócio</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="secao-acessibilidade">
+      <h2 id="secao-acessibilidade">Acessibilidade e Inclusão</h2>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Pessoa utilizando um notebook para compras online, com ícones de acessibilidade sobrepostos">
+      </div>
+      <p>
+        A inclusão digital é essencial para que mais brasileiros possam acessar o e-commerce. Isso inclui sites responsivos,
+        acessíveis e adaptados para diferentes públicos.
+      </p>
+      <p>
+        Empresas que investem em acessibilidade digital não apenas ampliam seu público potencial,
+        mas também demonstram compromisso com a inclusão social, o que pode ser um diferencial competitivo importante.
+      </p>
+    </section>
+
+    <section aria-labelledby="secao-tendencias">
+      <h2 id="secao-tendencias">Tendências para o Futuro</h2>
+      <p>As principais tendências que moldarão o futuro do e-commerce no Brasil:</p>
+      <ul style="margin-left: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Comércio social:</strong> Vendas diretamente através de redes sociais</li>
+        <li style="margin-bottom: 0.5rem;"><strong>IA e personalização:</strong> Experiências de compra cada vez mais personalizadas</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Sustentabilidade:</strong> Consumidores valorizando práticas sustentáveis</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Voz e IoT:</strong> Compras através de assistentes de voz e dispositivos conectados</li>
+      </ul>
+    </section>
+
+    <section id="contato" aria-labelledby="secao-contato">
+      <h2 id="secao-contato">Entre em Contato</h2>
+      <p>Quer saber mais sobre o crescimento do e-commerce no Brasil? Entre em contato conosco:</p>
+      <form style="margin-top: 1.5rem;">
+        <div style="margin-bottom: 1rem;">
+          <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome:</label>
+          <input type="text" id="nome" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail:</label>
+          <input type="email" id="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem:</label>
+          <textarea id="mensagem" rows="4" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+        </div>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2025 - Trabalho de Desenvolvimento de Sistemas | Tema: E-commerce no Brasil</p>
+      <p style="margin-top: 1rem;">Fontes: E-commerce Brasil, Sebrae, Nuvemshop, ABComm</p>
+    </div>
+  </footer>
+
+  <script>
+    const botaoInfo = document.getElementById("botao-info");
+    const textoExtra = document.getElementById("texto-extra");
+
+    botaoInfo.addEventListener("click", () => {
+      const expandido = botaoInfo.getAttribute("aria-expanded") === "true";
+      botaoInfo.setAttribute("aria-expanded", !expandido);
+      textoExtra.hidden = expandido;
+      
+      // Alterar o texto do botão
+      botaoInfo.textContent = expandido ? "Ver mais informações" : "Ver menos informações";
+    });
+
+    // Adicionar interação ao formulário
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Obrigado pelo seu interesse! Em breve entraremos em contato.');
+      form.reset();
+    });
+
+    // Adicionar animação de entrada para as seções
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
